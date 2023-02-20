@@ -1,0 +1,30 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 20px;
+    align-items: center;
+    width: 16vw;
+    row-gap: 10px;
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.options {
+    width: 100%;
+    align-items: flex-start;
+    margin-top: 60px;
+}
+
+.options h6 {
+    cursor: pointer;
+}

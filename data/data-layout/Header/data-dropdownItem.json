@@ -1,0 +1,33 @@
+[
+	{
+		"path":"HomeDemo1",
+		"nameLink":"About us"
+	},
+	{
+		"path":"HomeDemo2",
+		"nameLink":"Privacy Policy"
+	},
+	{
+		"path":"HomeDemo3",
+		"nameLink":"Cookies Policy"
+	},
+	{
+		"path":"HomeDemo4",
+		"nameLink":"Terms and Condition"
+	},
+	{
+		"path":"HomeDemo5",
+		"nameLink":"White Paper"
+	},
+	{
+		"path":"HomeDemo6",
+		"nameLink":"Tokenomics"
+	},
+	{
+		"path":"HomeDemo6",
+		"nameLink":"Roadmap"
+	},	{
+		"path":"HomeDemo6",
+		"nameLink":"Operating Agreement"
+	}
+]
