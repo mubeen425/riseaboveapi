@@ -305,12 +305,14 @@ const SecHeader = ({ Logo, dropdownItem, MenuInfo }) => {
                 </Link>
               </div>
             </li>
-            <li className="lh-55px">
+            <li className="lh-55px bg-warning rounded">
               <Link href={"/Contact"}>
                 <a className="dropdown-item" href="Contact">
                   Contact
                 </a>
               </Link>
+            </li>
+            <li className="lh-55px text-secondary-emphasis bg-success ml-1 rounded">
               <Link href={"/Login"}>
                 <a className="dropdown-item" href="Contact">
                   Login

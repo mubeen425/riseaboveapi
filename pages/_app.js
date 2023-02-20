@@ -9,6 +9,7 @@ import "../assets/css/HomeDemo6-style/HomeDemo6.scss";
 
 import "../assets/css/header.css";
 import "../assets/css/Footer.scss";
+import '../styles/globals.css'
 
 import "../assets/css/General.css";
 import "../assets/css/bootstrap.min.css";

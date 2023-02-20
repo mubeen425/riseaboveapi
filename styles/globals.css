@@ -1,3 +1,18 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+.loginBtn {
+    background-color: green;
+    cursor: pointer;
+    height: 100%;
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    font-weight: 400;
+    transition: all 0.2s ease-in-out;
+}
+
+.loginBtn:hover {
+    background-color: rgb(24, 111, 24);
+}
