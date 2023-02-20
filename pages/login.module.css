@@ -26,8 +26,14 @@
 }
 
 .button {
+    color: white;
     width: 100%;
     padding: 20px;
     border-radius: 10px;
+    transition: 0.2s all ease-in-out;
     background-color: rgb(50, 98, 193);
+}
+
+.button:hover {
+    background-color: rgb(18, 64, 156);
 }
