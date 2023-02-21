@@ -8,7 +8,7 @@ export default function SubscriptionCard(props) {
                 <h1 class="card-text">{props.price}</h1>
                 <h6 class="card-text">{props.eth}</h6>
                 <h6 class="card-text">{props.token}</h6>
-                <a href="#" class="btn btn-primary w-100">{props.bonus}</a>
+                <button href="#" class="btn btn-primary w-100">Subscribe Now!</button>
             </div>
         </div>
     )
