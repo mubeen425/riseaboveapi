@@ -1,4 +1,7 @@
 import Head from "next/head";
+import { Provider } from "react-redux";
+
+import store from '../store/index'
 
 import "../assets/css/HomeDemo1-style/HomeDemo1.scss";
 import "../assets/css/HomeDemo2-style/HomeDemo2.scss";
