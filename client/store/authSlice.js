@@ -2,9 +2,9 @@ import {
     createSlice
 } from '@reduxjs/toolkit';
 import axios from 'axios';
-// import {
-//     toast
-// } from 'react-toastify';
+import {
+    toast
+} from 'react-toastify';
 import jwt_decode from 'jwt-decode';
 
 var token;
@@ -44,7 +44,7 @@ const authSlice = createSlice({
 
 const authActions = authSlice.actions;
 
-const registerUser = (userData, navigate) => {
+const registerUser = (userData, router) => {
     return (dispatch) => {
         try {
             axios.post('http://localhost:8000/addNewUser', userData)
@@ -57,7 +57,7 @@ const registerUser = (userData, navigate) => {
                     toast.success("User registered successfully!", {
                         position: 'bottom-left'
                     });
-                    navigate('/cart')
+                    router.push('/')
                 })
                 .catch((error) => {
                     toast.error(`${error.response.data}`, {

@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { Provider } from "react-redux";
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 import store from '../store/index'
 
@@ -21,7 +23,7 @@ import FooterPages from "layouts/Footer/FooterPages";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <Provider store={store}>
       <Head>
         <meta charSet="utf-8" />
         <meta name="robots" content="noindex, follow" />
@@ -54,10 +56,11 @@ function MyApp({ Component, pageProps }) {
           crossorigin="anonymous"
         ></script>
       </Head>
+      <ToastContainer/>
       <Header Title="Home Template4" />
       <Component {...pageProps} />
       <FooterPages ClassSpanTitle="gradient-text blue" />
-    </>
+    </Provider>
   );
 }
 
