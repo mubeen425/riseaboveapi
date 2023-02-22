@@ -6,6 +6,7 @@ import {
     toast
 } from 'react-toastify';
 import jwt_decode from 'jwt-decode';
+import {uiActions} from './uiSlice';
 
 var token;
 
@@ -46,25 +47,28 @@ const authActions = authSlice.actions;
 
 const registerUser = (userData, router) => {
     return (dispatch) => {
+        dispatch(uiActions.startLoading());
         try {
             axios.post('http://localhost:8000/addNewUser', userData)
-                .then((response) => {
-                    const token = response.data;
-                    
-                    localStorage.setItem('authToken', JSON.stringify(token));
+            .then((response) => {
+                const token = response.data;
+                
+                localStorage.setItem('authToken', JSON.stringify(token));
 
-                    dispatch(authActions.login(token))
-                    toast.success("User registered successfully!", {
-                        position: 'bottom-left'
-                    });
-                    router.push('/')
+                dispatch(authActions.login(token))
+                toast.success("User registered successfully!", {
+                    position: 'bottom-left'
+                });
+                router.push('/')
+            })
+            .catch((error) => {
+                toast.error(`${error.response.data}`, {
+                    position: 'bottom-left'
                 })
-                .catch((error) => {
-                    toast.error(`${error.response.data}`, {
-                        position: 'bottom-left'
-                    })
-                })
+            })
+            dispatch(uiActions.stopLoading());
         } catch (error) {
+            dispatch(uiActions.stopLoading());
             console.error(error);
         }
     }
@@ -72,6 +76,7 @@ const registerUser = (userData, router) => {
 
 const loginUser = (userData, router) => {
     return async (dispatch) => {
+        dispatch(uiActions.startLoading());
         try {
             const response = await axios.post('http://localhost:8000/authenticateUser', userData);
             if(response.data.status) {
@@ -89,7 +94,9 @@ const loginUser = (userData, router) => {
                     position: 'bottom-left'
                 })
             }
+            dispatch(uiActions.stopLoading());
         } catch (error) {
+            dispatch(uiActions.stopLoading());
             toast.error(error.response.data.message, {
                 position: 'bottom-left'
             })

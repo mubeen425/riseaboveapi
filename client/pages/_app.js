@@ -2,11 +2,8 @@ import Head from "next/head";
 import { Provider } from "react-redux";
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import { Modal } from "react-overlays";
-import {useSelector} from 'react-redux';
 
 import store from '../store/index'
-import Loading from '../components/ui/loading/Loading';
 
 import "../assets/css/HomeDemo1-style/HomeDemo1.scss";
 import "../assets/css/HomeDemo2-style/HomeDemo2.scss";
@@ -25,7 +22,6 @@ import Header from "layouts/Header";
 import FooterPages from "layouts/Footer/FooterPages";
 
 function MyApp({ Component, pageProps }) {
-  // const loading = useSelector(state => state.ui.loading)
 
   return (
     <Provider store={store}>
@@ -61,14 +57,7 @@ function MyApp({ Component, pageProps }) {
           crossorigin="anonymous"
         ></script>
       </Head>
-      {/* {loading &&
-        <Modal
-          show={true}
-          renderBackdrop={renderBackdrop}
-        >
-          <Loading />
-        </Modal>
-      } */}
+      
       <ToastContainer/>
       <Header Title="Home Template4" />
       <Component {...pageProps} />
