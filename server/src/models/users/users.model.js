@@ -75,7 +75,7 @@ const authenticateUser = async (userData) => {
         const {
             error
         } = authenticateSchema.validate(userData);
-
+        
         if (error) {
             return {
                 code: 400,
@@ -86,10 +86,10 @@ const authenticateUser = async (userData) => {
             const existingUser = await users.find({
                 email: userData.email
             });
-
+            
             if (existingUser.length > 0) {
                 const authenticated = await bcrypt.compare(userData.password, existingUser[0].password);
-
+                
                 if(authenticated) {
                     const token = getAuthToken(existingUser[0]);
                     return {
@@ -105,8 +105,6 @@ const authenticateUser = async (userData) => {
                         message: "Incorrect password!"
                     }
                 }
-
-
             } else {
                 return {
                     code: 404,

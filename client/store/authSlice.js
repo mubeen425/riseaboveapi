@@ -70,12 +70,12 @@ const registerUser = (userData, router) => {
     }
 }
 
-const loginUser = (userData, navigate) => {
+const loginUser = (userData, router) => {
     return async (dispatch) => {
         try {
             const response = await axios.post('http://localhost:8000/authenticateUser', userData);
-            
             if(response.data.status) {
+                console.log(response);
                 const token = response.data.message;
                 
                 localStorage.setItem('authToken', token);
@@ -83,10 +83,15 @@ const loginUser = (userData, navigate) => {
                 toast.success('Login Successful!', {
                     position: 'bottom-left'
                 })
-                navigate('/cart')
+                router.push('/')
+            }
+            else {
+                toast.error('Please try again!', {
+                    position: 'bottom-left'
+                })
             }
         } catch (error) {
-            toast.error(error.response, {
+            toast.error(error.response.data.message, {
                 position: 'bottom-left'
             })
         }

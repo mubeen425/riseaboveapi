@@ -15,8 +15,8 @@ const httpAddNewUser = async (req, res) => {
 
 const httpAuthenticateUser = async (req, res) => {
     try {
-        const result = await authenticateUser(req.body)
-
+        const result = await authenticateUser(req.body);
+        
         return res.status(result.code).send(result)
     }
     catch(error) {
