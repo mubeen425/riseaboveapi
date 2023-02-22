@@ -82,7 +82,7 @@ const loginUser = (userData, router) => {
                 toast.success('Login Successful!', {
                     position: 'bottom-left'
                 })
-                router.push('/')
+                router.push('/Subscriptions')
             }
             else {
                 toast.error('Please try again!', {

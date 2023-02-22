@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function SubscriptionCard(props) {
+    
     return (
         <div class="card bg-dark text-center" style={{ width: "18rem" }}>
             <div class="card-body">

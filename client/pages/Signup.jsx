@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 
 import styles from './login.module.css';
 import { registerUser } from 'store/authSlice';
+import { toast } from 'react-toastify';
 
 export default function Signup() {
     const dispatch = useDispatch();
@@ -52,7 +53,9 @@ export default function Signup() {
             }, router))
         }
         else {
-            // 
+            toast.error("Passwords do not match", {
+                position: "bottom-left"
+            })
         }
     }
 
