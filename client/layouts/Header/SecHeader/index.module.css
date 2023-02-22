@@ -1,0 +1,14 @@
+.myDropdown {
+    z-index: 1000;
+    width: 30%;
+    top: 110%;
+    background-color: black;
+    right: 1%;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.gap {
+    column-gap: 20px;
+    align-items: center;
+}

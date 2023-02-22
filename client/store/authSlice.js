@@ -75,7 +75,6 @@ const loginUser = (userData, router) => {
         try {
             const response = await axios.post('http://localhost:8000/authenticateUser', userData);
             if(response.data.status) {
-                console.log(response);
                 const token = response.data.message;
                 
                 localStorage.setItem('authToken', token);
