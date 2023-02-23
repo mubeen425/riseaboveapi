@@ -21,7 +21,7 @@ const httpSubscriptionHandler = async (req, res) => {
     ],
     mode: "payment",
     success_url: "http://localhost:3000",
-    cancel_url: "http://localhost:4242/subscriptions",
+    cancel_url: "http://localhost:3000",
   });
 
   res.send({url: session.url});

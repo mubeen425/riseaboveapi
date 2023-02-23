@@ -21,9 +21,9 @@ const SecHeader = ({ Logo, dropdownItem, MenuInfo }) => {
       <nav className="navbar navbar-expand-lg navbar-white   " id="banner">
         <div className="container-fluid">
           {/* Brand */}
-          <a className="navbar-brand" href="#">
-            <img src={Logo} alt="logo" style={{ paddingLeft: "10px" }} />
-            <span class="headtext"> Rise Eco Platform</span>
+          <a className="navbar-brand" href="/" role="button">
+              <img src={Logo} alt="logo" style={{ paddingLeft: "10px" }} />
+              <span class="headtext"> Rise Eco Platform</span>
           </a>
           {/* Toggler/collapsibe Button */}
           <button

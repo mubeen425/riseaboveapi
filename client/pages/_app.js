@@ -1,9 +1,11 @@
 import Head from "next/head";
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import {useEffect} from 'react'
 
 import store from '../store/index'
+import {authActions} from '../store/authSlice'
 
 import "../assets/css/HomeDemo1-style/HomeDemo1.scss";
 import "../assets/css/HomeDemo2-style/HomeDemo2.scss";
@@ -22,6 +24,7 @@ import Header from "layouts/Header";
 import FooterPages from "layouts/Footer/FooterPages";
 
 function MyApp({ Component, pageProps }) {
+  
 
   return (
     <Provider store={store}>

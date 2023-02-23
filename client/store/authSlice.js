@@ -10,9 +10,6 @@ import {uiActions} from './uiSlice';
 
 var token;
 
-if (typeof window !== 'undefined') {
-    token = localStorage.getItem('token')
-}
 
 const authSlice = createSlice({
     name: 'auth',
